@@ -13,5 +13,5 @@ with open(f"Inputs/{FILE_NAME}") as file:
     for i in range(N):
         pizzas.append((i, set(file.readline().split()[1:])))
 
-    for p in pizzas:
-        print(p)
+    #for p in pizzas:
+    #    print(p)
