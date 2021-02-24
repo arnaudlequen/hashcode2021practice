@@ -16,7 +16,20 @@ def map_ingredients_to_pizzas(pizzaList):
 pizzas.sort(key=lambda p: -len(p[1]))
 
 dico_ingredients_to_pizzas = map_ingredients_to_pizzas(pizzas)
-print(dico_ingredients_to_pizzas)
+#print(dico_ingredients_to_pizzas)
+
+def collisions_pizza(pizza, pizzaList):
+    all_collisions = []
+    ingredients = pizza[1]
+    for other_pizza in pizzaList:
+        new_ingredients = other_pizza[1]
+        collisions = ingredients.intersection(new_ingredients)
+        nb_collisions = len(collisions)
+        all_collisions.append(nb_collisions)
+    return all_collisions
+
+print(collisions_pizza(pizzas[0], pizzas))
+
 
 """
 with open(f"Outputs/{FILE_NAME}", "w+") as file:
