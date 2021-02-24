@@ -2,12 +2,12 @@ from main import *
 
 def map_ingredients_to_pizzas(pizzaList):
     """
-    Return a map that contains to each ingredients the pizzas in which it appear
+    Return a map that returns to each ingredients the pizzas in which it appear
     """
     dico_ingredients_to_pizzas = {}
     for pizza in pizzaList:
         for ingredient in pizza[1]:
-            if dico_ingredients_to_pizzas.get(ingredient, False):
+            if ingredient in dico_ingredients_to_pizzas:
                 dico_ingredients_to_pizzas[ingredient].append(pizza[0])
             else:
                 dico_ingredients_to_pizzas[ingredient] = [pizza[0]]
